@@ -1,9 +1,10 @@
 (defproject clerk-clojure "0.1.0-SNAPSHOT"
-  :description "Clerk + Clojure"
+  :description "Clerk + Mocking + Testing"
   :url "https://github.com/sindhubb/clerk-clojure"
   :dependencies [[metosin/compojure-api "2.0.0-alpha31"]
-                 [org.clojure/clojure "1.10.1"]
+                 [org.clojure/clojure "1.11.1"]
                  [ring/ring-jetty-adapter "1.6.3"]
+                 [ring/ring-mock "0.3.2"]
                  [io.github.nextjournal/clerk "0.12.707"]]
   :ring {:handler server/app
          :init server/init}

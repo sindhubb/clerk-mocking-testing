@@ -1,11 +1,11 @@
 ## What is this?
 
-This is a repository will familiarise you with basics of Clojure.
+A Clerk notebook to mock data for a ring clojure app and teach unit testing. 
 This repository uses Uses [Clerk](https://github.com/nextjournal/clerk) to show up as notebook.
 
 ## Where to see this stuff?
 
-https://sindhubb.github.io/clerk-clojure/
+https://sindhubb.github.io/clerk-mocking-testing/
 
 ## How to run this to contribute?
 

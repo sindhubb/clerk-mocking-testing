@@ -1,4 +1,4 @@
-(ns clj.hello_world)
+(ns clj.mocking)
 
 (def say "hello ")
 
