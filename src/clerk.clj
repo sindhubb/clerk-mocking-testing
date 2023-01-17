@@ -1,4 +1,4 @@
-(ns start-clerk
+(ns clerk
   (:require [nextjournal.clerk :as clerk])
   (:gen-class))
 
