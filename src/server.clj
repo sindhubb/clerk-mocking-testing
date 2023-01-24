@@ -6,10 +6,6 @@
             [clj.bytebreaks :refer [bytebreak-routes]])
   (:gen-class))
 
-;; (defroutes app
-;;   (GET "/holidays" [] holidays)
-;;   (route/files "/" {:root "./docs"}))
-
 (defroutes app
   (api
    (context "/bytebreaks" []
