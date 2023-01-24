@@ -5,7 +5,16 @@
             [ring.util.http-response :as res]))
 
 (s/defschema HolidaySchema
-  {:holidays s/Any})
+  [{:name s/Str
+    :date s/Str
+    :observed s/Str
+    :public s/Bool
+    :country s/Str
+    :uuid s/Str
+    :weekday {:date {:name s/Str
+                     :numeric s/Str}
+              :observed {:name s/Str
+                         :numeric s/Str}}}])
 
 (def base-url "https://holidayapi.com/v1/holidays?pretty")
 
@@ -13,15 +22,16 @@
                    :year "2022"
                    :key "72dd852a-c2a9-4cfd-86e6-2830514b3ba4"})
 
+
+
 (defn get-holidays []
-  (->> (client/get base-url {:as
-                             :json
-                             :query-params query-params})
-       (#(get-in % [:body :holidays])
-        (str))))
+  (res/ok (->> (client/get base-url {:as
+                                     :json
+                                     :query-params query-params})
+               (#(get-in % [:body :holidays])))))
 
 (def bytebreak-routes
   [(GET "/holidays" request
    :summary "Get all holdays"
-   :return [HolidaySchema]
+   :return HolidaySchema
    (get-holidays))])

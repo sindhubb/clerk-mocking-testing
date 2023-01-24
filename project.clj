@@ -10,7 +10,8 @@
                  [ring/ring-jetty-adapter "1.6.3"]
                  [ring/ring-mock "0.3.2"]
                  [io.github.nextjournal/clerk "0.12.707"]
-                 [io.bytebeam/schema-contrib "0.2.0"]]
+                 [io.bytebeam/schema-contrib "0.2.0"]
+                 [metosin/jsonista "0.2.5"]]
   :ring {:handler server/app
          :init server/init}
   :main ^:skip-aot server

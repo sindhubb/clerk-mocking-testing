@@ -1,7 +1,7 @@
 (ns server
   (:require [compojure.core :refer [defroutes]]
             [compojure.route :as route]
-            [compojure.api.sweet :refer [api context routes]]
+            [compojure.api.sweet :refer [api context GET routes]]
             [ring.adapter.jetty :refer [run-jetty]]
             [clj.bytebreaks :refer [bytebreak-routes]])
   (:gen-class))
