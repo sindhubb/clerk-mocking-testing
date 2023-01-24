@@ -1,20 +1,21 @@
 (ns server
-  (:require [compojure.core :refer [defroutes GET]]
+  (:require [compojure.core :refer [defroutes]]
             [compojure.route :as route]
-            [ring.adapter.jetty :refer [run-jetty]])
+            [compojure.api.sweet :refer [api context routes]]
+            [ring.adapter.jetty :refer [run-jetty]]
+            [clj.bytebreaks :refer [bytebreak-routes]])
   (:gen-class))
 
-(defn welcome
-  "A ring handler to respond with a simple welcome message"
-  [request]
-  {:status 200
-   :body "<h1>Hello, Clojure World</h1>
-     <p>Welcome to your first Clojure app, I now update automatically</p>
-   <p>I now use defroutes to manage incoming requests</p>"
-   :headers {}})
+;; (defroutes app
+;;   (GET "/holidays" [] holidays)
+;;   (route/files "/" {:root "./docs"}))
 
 (defroutes app
-  (GET "/hello" [] welcome)
+  (api
+   (context "/bytebreaks" []
+     :tags []
+     :middleware []
+     (apply routes bytebreak-routes)))
   (route/files "/" {:root "./docs"}))
 
 (defn -main

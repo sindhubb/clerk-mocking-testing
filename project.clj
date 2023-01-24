@@ -1,11 +1,16 @@
 (defproject clerk-clojure "0.1.0-SNAPSHOT"
   :description "Clerk + Mocking + Testing"
   :url "https://github.com/sindhubb/clerk-clojure"
-  :dependencies [[metosin/compojure-api "2.0.0-alpha31"]
+  :dependencies [[clj-http "3.12.3"]
+                 [cheshire "5.9.0"]
+                 [com.fasterxml.jackson.core/jackson-core "2.12.4"]
+                 [org.clojure/tools.cli "1.0.206"]
+                 [metosin/compojure-api "2.0.0-alpha31"]
                  [org.clojure/clojure "1.11.1"]
                  [ring/ring-jetty-adapter "1.6.3"]
                  [ring/ring-mock "0.3.2"]
-                 [io.github.nextjournal/clerk "0.12.707"]]
+                 [io.github.nextjournal/clerk "0.12.707"]
+                 [io.bytebeam/schema-contrib "0.2.0"]]
   :ring {:handler server/app
          :init server/init}
   :main ^:skip-aot server
