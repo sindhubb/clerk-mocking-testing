@@ -3,7 +3,7 @@
 ;; We will use ring.mock.request to mock the request and response
 (ns clj.testing
   (:require [clj.bytebreaks :as bytebreaks]
-            [clojure.test :refer [deftest is run-test run-tests
+            [clojure.test :refer [deftest is run-all-tests run-test run-tests
                                   testing]]
             [ring.mock.request :as mock]))
 
@@ -23,7 +23,15 @@
                                         :numeric "3"},
                                  :observed {:name "Wednesday",
                                             :numeric "3"}}}]}))))
+
 (require '[nextjournal.clerk :as clerk])
 
+;; There are multiple ways to run your tests, you can use
+;; the `run-all-tests` function to run all the tests in the
+;; current namespace, or you can use the `run-tests` function
+;; to run all the tests in a specific namespace, or you can
+;; use the `run-test` function to run a specific test.
+^::clerk/no-cache (run-all-tests)
+^::clerk/no-cache (run-tests)
 ^::clerk/no-cache (run-tests 'clj.testing)
-((run-test holidays-test) :summary)
+^::clerk/no-cache (run-test holidays-test)
