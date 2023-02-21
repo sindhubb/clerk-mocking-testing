@@ -1,9 +1,9 @@
 (ns server
-  (:require [compojure.core :refer [defroutes]]
+  (:require [clj.bytebreaks :refer [bytebreak-routes]]
+            [compojure.api.sweet :refer [api context routes]]
+            [compojure.core :refer [defroutes]]
             [compojure.route :as route]
-            [compojure.api.sweet :refer [api context GET routes]]
-            [ring.adapter.jetty :refer [run-jetty]]
-            [clj.bytebreaks :refer [bytebreak-routes]])
+            [ring.adapter.jetty :refer [run-jetty]])
   (:gen-class))
 
 (defroutes app
