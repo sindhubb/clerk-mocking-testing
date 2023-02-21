@@ -50,9 +50,6 @@
   "get holidays from holidayapi" 
   [options]
   (let [resp (->> (merge {:as :json
-                          :proxy-host "127.0.0.1"
-                          :proxy-port 8080
-                          :proxy-ignore-hosts [*]
                           :query-params query-params} options)
                   (http/get base-url))]
     (if (= 200 (:status resp))
