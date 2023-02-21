@@ -1,8 +1,10 @@
-(defproject clerk-clojure "0.1.0-SNAPSHOT"
+(defproject clerk-clojure "0.1.0"
   :description "Clerk + Mocking + Testing"
   :url "https://github.com/sindhubb/clerk-clojure"
   :dependencies [[clj-http "3.12.3"]
+                 [clj-time "0.15.2"]
                  [cheshire "5.9.0"]
+                 [helpshift/faker "0.3.0"]
                  [com.fasterxml.jackson.core/jackson-core "2.12.4"]
                  [org.clojure/tools.cli "1.0.206"]
                  [metosin/compojure-api "2.0.0-alpha31"]
