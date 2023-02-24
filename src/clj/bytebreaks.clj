@@ -74,4 +74,3 @@
                     :day (t/day (l/local-now))}))])
 
 ;; Every salaried employee in India wonders when they can take a break from work but without spending too many of their leaves. And, India has a lot of holidays! How about we try to find a window of holidays that will allow you to combine weekends, holidays and as little of your leaves as possible to give you the longest possible break window.
-

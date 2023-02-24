@@ -19,7 +19,8 @@
   :main ^:skip-aot server
   :uberjar-name "clerk+clojure.jar"
   :aliases {"make-docs" ["run" "-m" "docs"]
-            "start-clerk" ["run" "-m" "clerk"]}
+            "start-clerk" ["run" "-m" "clerk"]
+            "start-server" ["run" "-m" "server"]}
   :profiles {:dev {:dependencies
                    [[javax.servlet/javax.servlet-api "3.1.0"]]
                    :plugins
